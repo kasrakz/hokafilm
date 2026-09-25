@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>استودیو حوکافیلم | HOKAFILM STUDIO</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#e50914; --red-dark:#8f0008;
+  --black:#0a0a0a; --dark:#141414; --card:#1b1b1b;
+  --white:#ffffff; --gray:#b3b3b3;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Vazirmatn',Tahoma,sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.9}
+
+/* ---------- HEADER ---------- */
+header{position:fixed;top:0;width:100%;z-index:100;padding:12px 6%;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,.8);backdrop-filter:blur(14px);border-bottom:1px solid rgba(229,9,20,.25)}
+.logo{display:flex;align-items:center;gap:12px;font-size:1.2rem;font-weight:900;letter-spacing:1px}
+.logo img{height:44px;width:44px;border-radius:50%;object-fit:cover;border:2px solid var(--red)}
+.logo span{color:var(--red)}
+nav a{color:var(--gray);text-decoration:none;margin-right:26px;font-size:.92rem;transition:.3s}
+nav a:hover{color:var(--red)}
+@media(max-width:640px){nav{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 6% 60px;position:relative;
+background:radial-gradient(ellipse at 50% 115%,rgba(229,9,20,.16),transparent 55%),var(--black)}
+.hero-logo{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid var(--red);box-shadow:0 0 60px rgba(229,9,20,.45);margin-bottom:32px;animation:fadeUp .9s both}
+.hero .badge{border:1px solid var(--red);color:var(--red);padding:6px 22px;border-radius:50px;font-size:.85rem;margin-bottom:26px;animation:fadeUp .9s .1s both}
+.hero h1{font-size:clamp(2.2rem,7vw,4.6rem);font-weight:900;line-height:1.25;animation:fadeUp .9s .2s both}
+.hero h1 em{font-style:normal;color:var(--red);text-shadow:0 0 40px rgba(229,9,20,.5)}
+.hero p{max-width:720px;color:var(--gray);margin:26px auto 40px;font-size:clamp(1rem,2.4vw,1.2rem);animation:fadeUp .9s .35s both}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;padding:15px 46px;border-radius:50px;text-decoration:none;font-weight:800;font-size:1.05rem;transition:.35s;box-shadow:0 8px 32px rgba(229,9,20,.4);animation:fadeUp .9s .5s both}
+.btn:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(229,9,20,.6)}
+.btn.ghost{background:transparent;border:1.5px solid #fff;margin-right:14px;box-shadow:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+
+/* ---------- SECTIONS ---------- */
+section{padding:90px 6%}
+.sec-title{text-align:center;margin-bottom:14px;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900}
+.sec-title::after{content:'';display:block;width:70px;height:4px;background:var(--red);margin:16px auto 0;border-radius:4px}
+.sec-sub{text-align:center;color:var(--gray);max-width:640px;margin:0 auto 54px}
+
+/* ---------- ACCORDION ---------- */
+.acc{max-width:860px;margin:0 auto}
+.acc-item{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:16px;margin-bottom:16px;overflow:hidden;transition:.35s}
+.acc-item:hover{border-color:rgba(229,9,20,.4)}
+.acc-item.open{border-color:var(--red);box-shadow:0 0 34px rgba(229,9,20,.14)}
+.acc-head{width:100%;background:none;border:none;color:#fff;font-family:inherit;display:flex;justify-content:space-between;align-items:center;padding:22px 26px;cursor:pointer;text-align:right;font-size:1.05rem;font-weight:700}
+.acc-head .icon{width:30px;height:30px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:.4s;flex-shrink:0;margin-right:14px}
+.acc-item.open .icon{transform:rotate(45deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.acc-body-inner{padding:0 26px 26px;color:var(--gray);font-size:.97rem}
+.pkg{display:flex;gap:14px;background:var(--dark);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 18px;margin-top:12px;align-items:flex-start}
+.pkg .medal{font-size:1.5rem}
+.pkg b{color:#fff;display:block;font-size:1rem}
+.pkg .price{color:var(--red);font-weight:900;font-size:1.05rem;white-space:nowrap}
+.note{background:rgba(229,9,20,.08);border-right:3px solid var(--red);padding:14px 18px;border-radius:8px;margin-top:16px;font-size:.92rem;color:#ddd}
+
+/* ---------- CHART ---------- */
+.chart-wrap{max-width:900px;margin:0 auto;background:linear-gradient(160deg,#160808,var(--dark));border:1px solid rgba(229,9,20,.3);border-radius:24px;padding:50px 40px;position:relative;overflow:hidden}
+.chart-svg{width:100%;height:auto}
+.chart-legend{display:flex;gap:34px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.chart-legend div{display:flex;align-items:center;gap:8px;color:var(--gray);font-size:.9rem}
+.dot{width:12px;height:12px;border-radius:50%}
+@media(max-width:640px){.chart-wrap{padding:34px 20px}}
+
+/* ---------- STATS ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:960px;margin:0 auto}
+.stat{background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:34px 20px;text-align:center;transition:.35s}
+.stat:hover{border-color:var(--red);transform:translateY(-6px)}
+.stat .num{font-size:2rem;font-weight:900;color:var(--red)}
+.stat .lbl{color:var(--gray);font-size:.9rem;margin-top:6px}
+
+/* ---------- CONTACT ---------- */
+.contact{background:linear-gradient(180deg,var(--black),#170808)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:960px;margin:0 auto}
+.c-card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:34px 24px;text-align:center;text-decoration:none;color:#fff;transition:.35s;display:block}
+.c-card:hover{border-color:var(--red);transform:translateY(-6px);box-shadow:0 12px 36px rgba(229,9,20,.2)}
+.c-card .ic{font-size:2.2rem;margin-bottom:12px}
+.c-card .t{font-weight:800;margin-bottom:4px}
+.c-card .v{color:var(--gray);font-size:.95rem;direction:ltr;unicode-bidi:plaintext}
+
+footer{text-align:center;padding:36px;color:#666;font-size:.85rem;border-top:1px solid rgba(255,255,255,.06)}
+.reveal{opacity:0;transform:translateY(36px);transition:.8s cubic-bezier(.2,.7,.3,1)}
+.reveal.show{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="لوگو حوکافیلم" onerror="this.style.display='none'">
+    HOKA<span>FILM</span>
+  </div>
+  <nav>
+    <a href="#services">خدمات</a>
+    <a href="#growth">چرا حوکافیلم</a>
+    <a href="#contact">ارتباط با ما</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-logo" src="logo.png" alt="لوگو استودیو حوکافیلم" onerror="this.style.display='none'">
+  <div class="badge">🎬 استودیو تولید محتوای سینمایی</div>
+  <h1>استودیو <em>حوکافیلم</em><br>تصویر یعنی فروش</h1>
+  <p>طراحی سیستم فروش از طریق تصویر و تولید محتوا با تجهیزات سینمایی و تدوین تخصصی برای تمامی کسب‌وکارها. محتواهای ما صرفاً برای ویو ساخته نمی‌شوند؛ سناریو، تولید و اجرا با تمرکز بر برندسازی، اعتمادسازی و رشد فروش انجام می‌شود.</p>
+  <div>
+    <a href="#services" class="btn">مشاهده خدمات و قیمت‌ها</a>
+    <a href="#contact" class="btn ghost">مشاوره رایگان</a>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2 class="sec-title reveal">خدمات حوکافیلم</h2>
+  <p class="sec-sub reveal">پکیج‌های زیر پیشنهادی هستند؛ قبل از شروع همکاری، نیاز کسب‌وکار، مخاطب، هدف فروش و شرایط برند شما بررسی و در صورت نیاز پکیج اختصاصی طراحی می‌شود. روی هر خدمت کلیک کنید.</p>
+
+  <div class="acc reveal">
+
+    <div class="acc-item">
+      <button class="acc-head">🎥 تک‌ویدیو تبلیغاتی <span class="icon">+</span></button>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>یک ویدیوی تبلیغاتی کامل و سینمایی از برند شما — مناسب شروع برندسازی و معرفی حرفه‌ای کسب‌وکار.</p>
+        <div class="pkg"><span class="medal">🥉</span><div style="flex:1"><b>برنزی</b>داستان کسب‌وکار + معرفی مدیریت + محصول یا خدمات + رزومه + مزیت‌ها + آدرس</div><span class="price">۱۲ میلیون تومان</span></div>
+        <div class="pkg"><span class="medal">🥈</span><div style="flex:1"><b>نقره‌ای</b>موارد پکیج برنزی + اکتور + دوبلر + پست و استوری تبلیغاتی</div><span class="price">۲۲ میلیون تومان</span></div>
+        <div class="pkg"><span class="medal">🥇</span><div style="flex:1"><b>طلایی</b>تولید حرفه‌ای‌تر با طراحی اجرایی سطح بالاتر + اکتور + دوبلر + معرفی کامل برند و خدمات + انتشار تبلیغاتی</div><span class="price">۴۵ میلیون تومان</span></div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-head">📦 پکیج‌های ماهانه تولید محتوا <span class="icon">+</span></button>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>تفاوت پکیج‌ها فقط در تعداد محتوا نیست؛ نوع تجهیزات، سطح سناریو، کیفیت تولید و خروجی نهایی نیز متفاوت است.</p>
+        <div class="pkg"><span class="medal">🥉</span><div style="flex:1"><b>۱۲ پست ماهانه</b>تولید محتوای منظم برای حضور فعال برند</div><span class="price">۲۴ میلیون تومان</span></div>
+        <div class="pkg"><span class="medal">🥈</span><div style="flex:1"><b>۱۶ پست ماهانه</b>پوشش کامل‌تر با سناریوی عمیق‌تر</div><span class="price">۴۰ میلیون تومان</span></div>
+        <div class="pkg"><span class="medal">🥇</span><div style="flex:1"><b>۱۸ پست ماهانه</b>تولید پرتراکم با کیفیت سینمایی بالاتر</div><span class="price">۵۰ میلیون تومان</span></div>
+        <div class="pkg"><span class="medal">💎</span><div style="flex:1"><b>۱۲ پست لوکس</b>بالاترین سطح تجهیزات، سناریو و خروجی</div><span class="price">۷۰ میلیون تومان</span></div>
+        <div class="note">تمام پکیج‌ها شامل تصویربردار، ادیتور و سناریونویسی اختصاصی بر اساس شخصیت برند و هدف فروش شما هستند. هزینه اکتور، دوبلر و ادمین پست و استوری جداگانه محاسبه می‌شود.</div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-head">🌐 طراحی سایت <span class="icon">+</span></button>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>طراحی وب‌سایت حرفه‌ای متناسب با هویت برند شما؛ ویترین آنلاینی که اعتماد می‌سازد و مسیر خرید مشتری را کوتاه می‌کند.</p>
+        <div class="note">💬 قیمت بر اساس نیاز پروژه — برای استعلام با ما در تماس باشید.</div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-head">📸 عکاسی تخصصی محصول <span class="icon">+</span></button>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>عکاسی صنعتی و تبلیغاتی با نورپردازی حرفه‌ای؛ تصاویری که محصول شما را همان‌طور که شایسته است نشان می‌دهند و حس خرید را در مخاطب ایجاد می‌کنند.</p>
+        <div class="note">💬 قیمت بر اساس تعداد و نوع محصول — برای استعلام با ما در تماس باشید.</div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-head">📈 کوچینگ فروش <span class="icon">+</span></button>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>منتورینگ تخصصی فروش برای شما و تیم‌تان؛ از پاسخ‌گویی درست به دایرکت تا تکنیک‌های بستن معامله. تصویر مشتری می‌آورد، کوچینگ یادتان می‌دهد چطور بفروشید.</p>
+        <div class="note">💬 جلسات بر اساس نیاز برنامه‌ریزی می‌شود — برای رزرو با ما در تماس باشید.</div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-head">🎯 طراحی و اجرای کمپین فروش و بازاریابی سنتی <span class="icon">+</span></button>
+      <div class="acc-body"><div class="acc-body-inner">
+        <p>از ایده تا اجرا: طراحی کمپین‌های فروش هدفمند و ترکیب بازاریابی دیجیتال با روش‌های سنتی برای نفوذ عمیق‌تر برند شما در بازار.</p>
+        <div class="note">💬 بر اساس اهداف کمپین، پلن اختصاصی طراحی می‌شود — برای شروع با ما در تماس باشید.</div>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GROWTH CHART -->
+<section id="growth">
+  <h2 class="sec-title reveal">محتوا یعنی مسیر رشد فروش</h2>
+  <p class="sec-sub reveal">استراتژی محتوای هدفمند، برند شما را از دیده‌شدن به فروش می‌رساند — قدم‌به‌قدم و قابل اندازه‌گیری.</p>
+  <div class="chart-wrap reveal">
+    <svg class="chart-svg" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#e50914" stop-opacity=".45"/>
+          <stop offset="100%" stop-color="#e50914" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#8f0008"/><stop offset="100%" stop-color="#ff3b47"/>
+        </linearGradient>
+      </defs>
+      <g stroke="rgba(255,255,255,.08)" stroke-width="1">
+        <line x1="40" y1="60" x2="680" y2="60"/><line x1="40" y1="120" x2="680" y2="120"/>
+        <line x1="40" y1="180" x2="680" y2="180"/><line x1="40" y1="240" x2="680" y2="240"/>
+      </g>
+      <path id="areaPath" fill="url(#area)" d="M40,235 L150,215 L260,185 L370,150 L480,110 L590,70 L660,40 L660,260 L40,260 Z"/>
+      <path id="linePath" fill="none" stroke="url(#line)" stroke-width="4" stroke-linecap="round" d="M40,235 L150,215 L260,185 L370,150 L480,110 L590,70 L660,40"/>
+      <g fill="#e50914" stroke="#fff" stroke-width="2">
+        <circle cx="150" cy="215" r="6"/><circle cx="260" cy="185" r="6"/><circle cx="370" cy="150" r="6"/>
+        <circle cx="480" cy="110" r="6"/><circle cx="590" cy="70" r="6"/><circle cx="660" cy="40" r="7" fill="#fff" stroke="#e50914" stroke-width="3"/>
+      </g>
+      <g fill="#b3b3b3" font-size="13" text-anchor="middle" font-family="Vazirmatn">
+        <text x="40" y="282">شروع</text><text x="150" y="282">ماه ۱</text><text x="260" y="282">ماه ۲</text>
+        <text x="370" y="282">ماه ۳</text><text x="480" y="282">ماه ۴</text><text x="590" y="282">ماه ۵</text><text x="660" y="282">ماه ۶</text>
+      </g>
+    </svg>
+    <div class="chart-legend">
+      <div><span class="dot" style="background:#e50914"></span> رشد فروش با محتوای هدفمند</div>
+      <div><span class="dot" style="background:#555"></span> مسیر متوسط کسب‌وکار بدون استراتژی</div>
+    </div>
+  </div>
+
+  <div style="height:60px"></div>
+
+  <div class="stats reveal">
+    <div class="stat"><div class="num">سینمایی</div><div class="lbl">تجهیزات فیلمبرداری، نور و صدا</div></div>
+    <div class="stat"><div class="num">اختصاصی</div><div class="lbl">سناریو بر اساس شخصیت برند شما</div></div>
+    <div class="stat"><div class="num">هدفمند</div><div class="lbl">تمرکز بر فروش، نه فقط ویو</div></div>
+    <div class="stat"><div class="num">کامل</div><div class="lbl">تصویربردار، ادیتور و سناریونویس</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2 class="sec-title reveal">ارتباط با ما</h2>
+  <p class="sec-sub reveal">برای انتخاب بهترین پکیج، ابتدا نیاز شما را بررسی می‌کنیم تا بودجه تولید در مؤثرترین مسیر برای برندتان استفاده شود.</p>
+  <div class="contact-grid reveal">
+    <a class="c-card" href="https://instagram.com/Studio.hokafilm" target="_blank">
+      <div class="ic">📷</div><div class="t">اینستاگرام</div><div class="v">@Studio.hokafilm</div>
+    </a>
+    <a class="c-card" href="https://t.me/hokafilm" target="_blank">
+      <div class="ic">✈️</div><div class="t">تلگرام</div><div class="v">@hokafilm</div>
+    </a>
+    <a class="c-card" href="tel:+989991206956">
+      <div class="ic">📞</div><div class="t">تماس مستقیم</div><div class="v">0999-120-6956</div>
+    </a>
+  </div>
+</section>
+
+<footer>© استودیو حوکافیلم | HOKAFILM STUDIO — ساری، مازندران</footer>
+
+<script>
+document.querySelectorAll('.acc-head').forEach(h=>{
+  h.addEventListener('click',()=>{
+    const item=h.parentElement, body=item.querySelector('.acc-body'), open=item.classList.contains('open');
+    document.querySelectorAll('.acc-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.acc-body').style.maxHeight=null});
+    if(!open){item.classList.add('open');body.style.maxHeight=body.scrollHeight+'px'}
+  });
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const lp=document.getElementById('linePath');
+if(lp){const len=lp.getTotalLength();lp.style.strokeDasharray=len;lp.style.strokeDashoffset=len;
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){lp.style.transition='stroke-dashoffset 2.2s ease';lp.style.strokeDashoffset=0;o.disconnect()}}),{threshold:.4}).observe(lp);}
+</script>
+</body>
+</html>
